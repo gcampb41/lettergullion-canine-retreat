@@ -188,7 +188,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 @media (max-width: 1040px) {
   .site-header { grid-template-columns: 240px 1fr auto; gap: 22px; }
-  .site-nav { position: fixed; inset: 98px 0 0; display: none; padding: 70px 28px 120px; background: var(--linen); align-content: center; justify-items: center; }
+  .site-nav { position: absolute; z-index: 1; top: 100%; right: 0; left: 0; height: calc(100dvh - 98px); min-height: calc(100svh - 98px); display: none; padding: 70px 28px 120px; overflow-y: auto; overscroll-behavior: contain; background: var(--linen); align-content: center; justify-items: center; }
   .site-nav.is-open { display: grid; }
   .site-nav a { font-family: var(--serif); font-size: 28px; font-weight: 400; letter-spacing: 0; text-transform: none; }
   .menu-toggle { display: block; justify-self: end; }
@@ -221,7 +221,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .brand { width: 180px; height: 76px; }
   .brand img { width: 180px; }
   .menu-toggle { justify-self: end; }
-  .site-nav { inset: 82px 0 0; }
+  .site-nav { height: calc(100dvh - 82px); min-height: calc(100svh - 82px); padding: clamp(38px, 8vh, 70px) 28px calc(92px + env(safe-area-inset-bottom)); }
   .hero { min-height: calc(100svh - 82px); padding: 70px 16px 62px; }
   .hero::before { background: linear-gradient(0deg, rgba(8,27,18,.93) 0%, rgba(8,27,18,.78) 58%, rgba(8,27,18,.2) 100%); }
   .hero-copy { width: 100%; padding-bottom: 15px; }
